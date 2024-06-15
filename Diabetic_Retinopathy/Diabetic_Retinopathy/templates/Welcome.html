@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Upload Your Image</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: url('static/images/background.jpg') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.9);
+            position: relative;
+            top: 30px;
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        h1 {
+            color: #fff;
+            font-size: 36px;
+            font-weight: bold;
+            font-family: 'Arial Black', sans-serif;
+        }
+        p {
+            color: #ffff00; /* Change text color to blue */
+            font-size: 25px;
+            font-weight: bold;
+            text-align: center; /* Center align the text */
+        }
+
+        input[type="file"] {
+            margin: 10px 0;
+            font-size: 20px;
+            font-weight: bold;
+             border: 5px solid #006400;
+            padding: 10px;
+            /* Add a dark green border around the input */
+        }
+        button {
+            background-color: #FF5733;
+            color: #fff;
+            padding: 20px 40px; /* Increase padding to make the button larger */
+            border: none;
+            cursor: pointer;
+            border-radius: 10px; /* Add rounded corners to the button */
+            font-size: 24px; /* Increase font size */
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 style="text-align: center; padding: 20px;">Upload Your Retina Image for Instant Analysis with Our Hybrid Model....</h1>
+    <p>Next-Gen Diabetic Retinopathy Detection: Unleashing the Power of Our Hybrid Model</p>
+
+    <div class="container">
+        <form action="/detect" method="POST" enctype="multipart/form-data">
+            <center>
+                <input type="file" name="file" id="file" accept=".png, .jpg, .jpeg, .bmp"><br><br><br>
+            </center>
+
+            <center>
+                <button class="button">DETECT</button>
+            </center>
+        </form>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Text Extraction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: url('static/images/eye.jpg') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 7);
+            text-align: center;
+            padding: 200px;
+            /*max-width: 800px;*/ /* Increased maximum width for larger container */
+            margin: 0 auto; /* Center the container horizontally */
+        }
+
+        h1 {
+            position: relative;
+            bottom: 90px;
+            color: #fff;
+            font-size: 36px;
+            font-weight: bold;
+            margin: 0;
+        }
+
+        p {
+            color: #555;
+            font-size: 20px;
+        }
+
+        button {
+
+            background-color: #007BFF;
+            color: #fff;
+            padding: 15px 40px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 24px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #FF0000;
+        }
+
+        #extraction-message {
+            display: none;
+            position: absolute;
+            top: 20px; /* Adjust the top position as needed */
+            left: 0;
+            right: 0;
+            font-weight: bold;
+            text-align: center;
+            background-color: #007BFF; /* Background color for the message */
+            color: #fff;
+            padding: 10px 0; /* Padding for the message */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Our Hybrid Model Is Working On The Image.....</h1>
+
+        <form action="/result" method="post">
+            <button id="extract-button">Continue</button>
+            <p id="extraction-message">Analysing The Retina, For severity ...</p>
+        </form>
+    </div>
+
+    <script>
+        // JavaScript code to show the extraction message and navigate after 3 seconds
+        const extractionMessage = document.getElementById("extraction-message");
+        const extractButton = document.getElementById("extract-button");
+        const extractionForm = extractButton.parentElement;
+
+        extractButton.addEventListener("click", function (event) {
+            // Prevent the form from being submitted (change to your actual extraction logic)
+            event.preventDefault();
+
+            // Show the extraction message
+            extractionMessage.style.display = "block";
+
+            // Delay navigation to the extraction page by 3 seconds
+            setTimeout(function () {
+                // Navigate to the extraction page
+                window.location.href = "/result"; // Replace with the actual URL
+            }, 3000); // 3 seconds (3000 milliseconds)
+        });
+    </script>
+</body>
+
+</html>
